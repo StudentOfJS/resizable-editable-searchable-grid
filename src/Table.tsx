@@ -8069,7 +8069,7 @@ const GridDemo: React.FC = () => {
     idField: 'id',
     columns,
     initialData: DEMO_DATA,
-    initialPageSize: 10,
+    initialPageSize: 5,
     defaultSortColumn: 'name',
     defaultSortDirection: 'asc',
   });
@@ -8088,7 +8088,7 @@ const GridDemo: React.FC = () => {
       <h1 className="text-2xl font-bold mb-4">Data Grid Demo</h1>
 
       {/* Search and Filters */}
-      <div className="mb-4 flex items-center gap-4">
+      <div className="mb-4 flex flex-col sm:flex-row sm:items-center gap-4">
         <div className="flex-grow">
           <input
             type="text"
@@ -8099,7 +8099,7 @@ const GridDemo: React.FC = () => {
           />
         </div>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center flex-wrap gap-2">
           <label htmlFor="status-filter" className="text-sm">
             Status:
           </label>
@@ -8148,7 +8148,7 @@ const GridDemo: React.FC = () => {
       )}
 
       {/* Grid Component */}
-      <div className="border border-gray-300 rounded overflow-auto">
+      <div className="rounded overflow-auto">
         <SVGResizableGrid
           headers={headers}
           fontColor="white"
@@ -8170,12 +8170,12 @@ const GridDemo: React.FC = () => {
       </div>
 
       {/* Pagination */}
-      <div className="mt-4 flex items-center justify-between">
+      <div className="mt-4 flex flex-col sm:flex-row sm:items-center justify-between">
         <div className="text-sm text-gray-600">
           Showing {rows.length} of {filteredCount} results (Total: {totalRows})
         </div>
 
-        <div className="flex items-center gap-4">
+        <div className="flex flex-col sm:flex-row sm:items-center gap-4">
           <div>
             <select
               value={pageSize}
